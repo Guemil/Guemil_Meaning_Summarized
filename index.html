@@ -74,7 +74,7 @@ Papa.parse("data.csv", {
         var data = values.data;
         console.log(data);
         var nivel;
-        for (var i = 0; i < (data.length-1); i++){
+        for (var i = 0; i < ((data.length)-1); i++){
             if (data[i].result < 73){ nivel = "c"; } else if (data[i].result >= 73 && data[i].result <= 83 ) { nivel = "b"; } else {nivel = "a"}
             if(data[i].version == 'v15'){
                 $("#v15").append('<article class="col-lg-2 col-md-3 col-sm-4 col-6" data-score="'+ nivel +'"><svg width="100%" height="100%" viewBox="0 0 42 42"><circle cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle><circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ddd" stroke-width="2"></circle><circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#000000" stroke-width="2" stroke-dasharray="'+ data[i].result +' '+ (100-data[i].result) +'" stroke-dashoffset="25"></circle><text x="50%" y="29" dominant-baseline="middle" text-anchor="middle" font-size="7">'+ data[i].result +'%</text><image x="15" y="10" width="12" height="12" xlink:href="'+ data[i].source +'" /></svg></article>');
